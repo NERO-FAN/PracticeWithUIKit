@@ -36,6 +36,8 @@ class UILabelViewController: UIViewController {
     
     func configureLabel() {
         hwLabel.text = "Click Me!"
+        // hwLabel.font = .boldSystemFont(ofSize: 24)
+        hwLabel.font = .systemFont(ofSize: 24, weight: .heavy)
         hwLabel.textColor = .white
         hwLabel.textAlignment = .center
         // the following is needed to make UILabel rounded
@@ -71,7 +73,7 @@ class UILabelViewController: UIViewController {
             hwLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             hwLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
             hwLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            hwLabel.heightAnchor.constraint(equalToConstant: 44),
+            hwLabel.heightAnchor.constraint(equalToConstant: 60),
             
             scaledTextLsbel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             scaledTextLsbel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
