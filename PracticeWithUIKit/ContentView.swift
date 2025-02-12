@@ -7,18 +7,18 @@
 
 import SwiftUI
 
+
+// uncomment one at a time to view the specific UI View that is being
+// called/implemented
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            // UILabelView()
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+
