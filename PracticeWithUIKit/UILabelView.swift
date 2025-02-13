@@ -17,7 +17,7 @@ class UILabelViewController: UIViewController {
     // will be the first method called on the UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         // call on our function to begin drawing our UI
         configureUI()
     }
@@ -25,6 +25,8 @@ class UILabelViewController: UIViewController {
     func configureUI() {
         // this handles any logic/UI related decisions with the UILabel object
         configureLabel()
+        
+        view.backgroundColor = .black
         
         // need to place our UILabel object into our root view before we declare any constraints on it
         view.addSubview(hwLabel)
@@ -38,9 +40,10 @@ class UILabelViewController: UIViewController {
         hwLabel.text = "Click Me!"
         // hwLabel.font = .boldSystemFont(ofSize: 24)
         hwLabel.font = .systemFont(ofSize: 24, weight: .heavy)
+        
         hwLabel.textColor = .white
         hwLabel.textAlignment = .center
-        // the following is needed to make UILabel rounded
+        // the following is needed to make UILabel rounded.
         hwLabel.layer.masksToBounds = true
         hwLabel.layer.cornerRadius = 10
         // This is how we call upon any predefined colors in our Assets file
@@ -49,21 +52,26 @@ class UILabelViewController: UIViewController {
         hwLabel.translatesAutoresizingMaskIntoConstraints = false
         
         scaledTextLsbel.textColor = .white
-        scaledTextLsbel.textAlignment = .center
-        scaledTextLsbel.backgroundColor = .systemBlue
-        scaledTextLsbel.layer.masksToBounds = true
-        scaledTextLsbel.layer.cornerRadius = 10
-        scaledTextLsbel.layoutMargins = .zero
+        scaledTextLsbel.font = .systemFont(ofSize: 16)
+//        scaledTextLsbel.textAlignment = .center
+//        scaledTextLsbel.backgroundColor = .systemBlue
         scaledTextLsbel.padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        scaledTextLsbel.text = "This is some long label content. This is some long label content. This is some long label content."
+        
+        // CGSize is a class built into the Core Graphics framework that UIKit has built in for use to use
+        // in the context of shadowOffset, it takes in a width and height parameter for our shadow effect
+        // keep in mind that settings masksToBounds to true will prevent any shadow effects from rendering
+        scaledTextLsbel.shadowOffset = CGSize(width: 2, height: 4)
+        scaledTextLsbel.shadowColor = UIColor.systemTeal
+        
+        scaledTextLsbel.text = "Hello, World!"
         // limits the number of lines the text can take up
-        scaledTextLsbel.numberOfLines = 1
-        // will scale text so that it fits on the view regardless of whether it's legible or not
-        scaledTextLsbel.adjustsFontSizeToFitWidth = true
-        // define a minimum scale factor
-        scaledTextLsbel.minimumScaleFactor = 1.5
-        // truncates the text to indicate to the user that there is still remaining text
-        scaledTextLsbel.lineBreakMode = .byTruncatingTail
+//        scaledTextLsbel.numberOfLines = 1
+//        // will scale text so that it fits on the view regardless of whether it's legible or not
+//        scaledTextLsbel.adjustsFontSizeToFitWidth = true
+//        // define a minimum scale factor
+//        scaledTextLsbel.minimumScaleFactor = 0.5
+//        // truncates the text to indicate to the user that there is still remaining text
+//        scaledTextLsbel.lineBreakMode = .byTruncatingTail
         // this is important to have because it prevents the compiler from automatically formatting our UI component
         scaledTextLsbel.translatesAutoresizingMaskIntoConstraints = false
     }

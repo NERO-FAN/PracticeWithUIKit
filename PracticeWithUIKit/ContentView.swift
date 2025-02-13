@@ -13,8 +13,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            UILabelView()
+            // UILabelView()
+            UIButtonView()
         }
+        .ignoresSafeArea()
     }
 }
 
