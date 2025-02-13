@@ -36,8 +36,8 @@ class UIButtonViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
         button.configuration = .borderedProminent()
         button.configuration?.baseBackgroundColor = .systemTeal
-        button.configuration?.baseForegroundColor = .white
-        button.configuration?.title = "Login"
+//        button.configuration?.baseForegroundColor = .white
+        button.configuration?.title = "Delete"
         button.configuration?.cornerStyle = .large
         button.addTarget(nil, action: #selector(handleButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +54,9 @@ class UIButtonViewController: UIViewController {
         // applying a shadow effect to our actual button label
         button.titleLabel?.shadowOffset = CGSize(width: 15, height: 10)
         button.titleLabel?.shadowColor = .black
+        
+        // setting a role for our button
+        button.role = .primary
         
         view.addSubview(button)
     }
