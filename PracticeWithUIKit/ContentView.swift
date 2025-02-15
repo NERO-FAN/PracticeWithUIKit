@@ -14,7 +14,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             // UILabelView()
-            UIButtonView()
+            // UIButtonView()
+            UIEmbeddedMenuView()
         }
         .ignoresSafeArea()
     }
